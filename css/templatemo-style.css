@@ -172,10 +172,10 @@ h1,h2,h3,h4,h5
 #home
 	{
         background: url('../images/home-bg.jpg');
-        background-size: cover;
+        background-size: 100%;
         background-repeat: no-repeat;
         padding-top: 120px;
-        padding-bottom: 140px;
+        padding-bottom: 280px;
         text-align: center;
 	}
 #home h1
@@ -418,3 +418,10 @@ footer hr
         color: #D43F52;
     }
 /* end social icon */
+
+/* start my own styles section */
+.outline-text-white {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+/* end   my own styles section */
