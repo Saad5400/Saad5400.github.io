@@ -48,7 +48,7 @@ public class App {
         int result =0 ;
 	    // compute the product of the three variables (num1, num2, num3) 
 	    // and store the value in the variable "result"
-        result=(int) (num1*num2*num3) ;
+        result=(int) (num1+num2+num3) ;
         // Hint: you may want to perform type casting from double to integer before storing 
         // the value of the sum operation to the variable "result"
 
