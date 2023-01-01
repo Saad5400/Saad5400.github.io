@@ -11,14 +11,21 @@
 </head>
 
 <body class="container">
-    <audio controls autoplay hidden muted id="audio_player">
+    <audio controls hidden id="audio_player">
         <source src="../audio/music.mp3" type="audio/mp3">
       </audio>
       <script>
-        let el = document.getElementById("audio_player");
-        el.muted = !el.muted;
-        el.play();
+        window.onmousemove = function() {
+            let el = document.getElementById("audio_player");
+            if (el.paused) {
+                el.play();
+            }
+        }
+        
       </script>
+
+
+
     <br>
     <br>
     <br>
@@ -67,6 +74,19 @@
                 </a>
             </li>
         </ul>
+    </div>
+
+    <div id = "toHide" style="position: fixed; top: 5px; left: 5px; width: 100%; height: 100%; padding-top: 150px; text-align: center; background: #eee; background-color: black;">
+        <h1>
+            <a class="btn btn-lg btn-outline-danger mt-5" onclick="hide()">
+                ENTER
+            </a>
+        </h1>
+        <script>
+            function hide() {
+                document.getElementById("toHide").remove();
+            }
+        </script>
     </div>
 
 </body>
