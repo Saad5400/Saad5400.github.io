@@ -198,14 +198,14 @@ public class App {
         ch1 = 'F';
         // declare two variables named timePeriodInMinutes and 
          // timePeriodInSeconds, and day of type double
-        String timePeriodInMinutes, timePeriodInSeconds;
+        Double timePeriodInMinutes, timePeriodInSeconds;
          
 
          //prompet the user to enter number of seconds and minutes separated by space
          // using the Scanner variable you have declared earlier 
         System.out.println("Enter timePeriodInMinutes then timePeriodInSeconds separated by space >> ");
-        timePeriodInMinutes = scnr.next();
-        timePeriodInSeconds = scnr.next();
+        timePeriodInMinutes = scnr.nextDouble();
+        timePeriodInSeconds = scnr.nextDouble();
 
 
         /**** Once You Are Done Coding, Un-Comment the following code lines ****/
