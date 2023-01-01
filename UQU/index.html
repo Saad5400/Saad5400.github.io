@@ -8,11 +8,16 @@
     </title>
 
     <link rel="stylesheet" href="../css/bootstrap.css">
-
-
 </head>
 
 <body class="container">
+    <audio controls autoplay hidden muted id="audio_player">
+        <source src="../audio/music.mp3" type="audio/mp3">
+      </audio>
+      <script>
+        let el = document.getElementById("audio_player");
+        el.muted = !el.muted;
+      </script>
     <br>
     <br>
     <br>
@@ -28,11 +33,17 @@
     </div>
     <br>
     <br>
-    <h5>
+    <h5 class="text-warning">
         JAVA 1
     </h5>
     <hr>
     <div>
+        <p class="h5">
+            MAN UP AND DO IT <strong class="text-danger">YOURSELF</strong>!
+        </p>
+        <p>
+            <strong class="text-danger">DO NOT DARE</strong> TO JUST COPY AND PASTE.
+        </p>
         <ul>
             <li>
                 <a href="JAVA_1/LAB_1.java">
@@ -47,6 +58,11 @@
             <li>
                 <a href="JAVA_1/LAB_2.java">
                     LAB 2
+                </a>
+            </li>
+            <li>
+                <a href="../home.html">
+                    LAB 3
                 </a>
             </li>
         </ul>
