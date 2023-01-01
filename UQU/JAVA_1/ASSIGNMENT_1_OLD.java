@@ -34,7 +34,7 @@ public class App {
 
     // declare a constant named "PROGRAM" of type String and give it the value:
     // "Simple Operations Program"
-    public static final String PROGRAM="Simple Operations Program";
+    public static final String PROGRAM = "Simple Operations Program";
     
     /*** computeSum method ***/
     /*
