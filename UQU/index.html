@@ -8,6 +8,43 @@
     </title>
 
     <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <style>
+            hr {
+                position: relative;
+                top: 10px;
+                border: none;
+                height: 6px;
+                background: white;
+                margin-bottom: 50px;
+            }
+
+            @media (max-width: 500px) {
+                .space {
+                    margin-top: 3vh;
+                }
+                .watching {
+                    font-size: 30px;
+                    margin-top: 10px;
+                }
+                .largeScreen {
+                    display: none;
+                }
+                p {
+                    font-size: 50%;
+                }
+                h4 {
+                    font-size: 100%;
+                }
+            }
+            @media (min-width: 500px) {
+                .smallScreen {
+                    display: none;
+                }
+            }
+    </style>
 </head>
 
 <body class="container">
@@ -23,34 +60,42 @@
         }
         
       </script>
-
-
-
     <br>
     <br>
-    <br>
-    <div class="row">
+    <div class="largeScreen row">
         <div class="col">
             <img class="w-75" src="../images/hacking.webp" >
         </div>
         <div class="col mx-auto align-self-center">
-            <h1>
+            <h1 class="watching">
+                WE ARE <a class="link-danger" href="../home.html">WATCHING</a>
+            </h1>
+        </div>
+    </div>
+    <div class="smallScreen">
+        <div class="row">
+            <img class="" src="../images/hacking.webp" >
+        </div>
+        <div class="row">
+            <h1 class="watching text-center">
                 WE ARE <a class="link-danger" href="../home.html">WATCHING</a>
             </h1>
         </div>
     </div>
     <br>
     <br>
+    <div class="space"></div>
+
     <h5 class="text-warning">
         JAVA 1
     </h5>
-    <hr>
+    <hr class="">
     <div>
-        <p class="h5">
+        <h4>
             MAN UP AND DO IT <strong class="text-danger">YOURSELF</strong>!
-        </p>
+        </h4>
         <p>
-            <strong class="text-danger">DO NOT DARE</strong> TO JUST COPY AND PASTE.
+            <strong class="text-danger">DO NOT DARE</strong> TO SIMPLY COPY AND PASTE.
         </p>
         <ul>
             <li>
@@ -82,11 +127,11 @@
     </div>
 
     <div id = "toHide" style="position: fixed; top: 5px; left: 5px; width: 100%; height: 100%; padding-top: 150px; text-align: center; background: #eee; background-color: black;">
-        <h1>
-            <a class="btn btn-lg btn-outline-danger mt-5" onclick="hide()">
+        <div style="position: fixed; top: 45%; left: 50%; transform: translate(-50%, -50%);">
+            <a id="enterBtn" class="btn btn-lg btn-outline-danger mt-5 px-5" onclick="hide()">
                 ENTER
             </a>
-        </h1>
+        </div>
         <script>
             function hide() {
                 document.getElementById("toHide").remove();
