@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../css/bootstrap.css">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+	<link rel="icon" type="image/png" href="../favicon.png">
 
     <style>
             hr {
@@ -60,11 +61,17 @@
         <source src="../audio/music.mp3" type="audio/mp3">
       </audio>
       <script>
-        window.onmousemove = function() {
-            // let el = document.getElementById("audio_player");
-            // if (el.paused) {
-            //     el.play();
-            // }
+        let clickCount = 0;
+        window.onclick = function() {
+            let el = document.getElementById("audio_player");
+            let vid = document.getElementById("myVideo");
+            clickCount++;
+            if (clickCount > 7 && vid.currentTime < 10) {
+                vid.currentTime = 10;
+            }
+            if (clickCount > 20) {
+                el.pause();
+            }
         }
         
       </script>
@@ -121,16 +128,16 @@
             <li>
                 <a href="JAVA_1/LAB_2.java">LAB 2</a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="JAVA_1_EXP/LAB_2.html" class="link-success">LAB 2 <strong>شرح</strong></a>
-            </li>
+            </li> -->
 
-            <li>
+            <!-- <li>
                 <a href="../home.html">LAB 3</a>
             </li>
             <li>
                 <a href="JAVA_1/LAB_3.html" class="link-success">LAB 3 <strong>شرح</strong></a>
-            </li>
+            </li> -->
         </ul>
     </div>
 
@@ -176,6 +183,7 @@
                 let vid = document.getElementById("myVideo");
                 vid.hidden = false;
                 vid.play();
+                document.getElementById("skipHint").hidden = false;
                 setTimeout(function() {
                     document.getElementById("innerHide").hidden = true;
                 }, 500);
@@ -185,6 +193,7 @@
                 let vid = document.getElementById("myVideo");
                 if (vid.currentTime > 10) {
                     document.getElementById("myVideo").hidden = true;
+                    document.getElementById("skipHint").hidden = true;
                     document.getElementById("toHide").hidden = true;
                     setTimeout(() => {
                         let el = document.getElementById("audio_player");
@@ -201,6 +210,9 @@
     <video id="myVideo" hidden>
         <source src="../video/video.mp4#t=5,30">
     </video>
+    <p id="skipHint" hidden style="position: fixed; bottom: 10%; left: 50%; transform: translate(-50%, -50%);">
+        Click repeatedly to skip
+    </p>
 
 </body>
 

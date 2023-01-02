@@ -11032,3 +11032,13 @@ legend {
   direction: ltr;
   text-align: end;
 }
+
+.thicc-hr {
+  position: relative;
+  top: 5px;
+  border: none;
+  height: 3px;
+  background: white;
+  margin-bottom: 5px;
+  margin-top: 0px;
+}
