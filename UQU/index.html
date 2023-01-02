@@ -2,13 +2,11 @@
 <html>
 
 <head>
-    <style lin></style>
     <title>
         حلول عملي البرمجة 1
     </title>
 
     <link rel="stylesheet" href="../css/bootstrap.css">
-
     <meta content="width=device-width, initial-scale=1" name="viewport" />
 
     <style>
@@ -18,7 +16,8 @@
                 border: none;
                 height: 6px;
                 background: white;
-                margin-bottom: 50px;
+                margin-bottom: 25px;
+                margin-top: 0px;
             }
 
             #myVideo {
@@ -29,6 +28,10 @@
                 height: 100%;
                 object-fit: fill;
                 }
+
+            a {
+                text-decoration: none;
+            }
 
             @media (max-width: 500px) {
                 .space {
@@ -51,6 +54,7 @@
     </style>
 </head>
 
+
 <body class="container">
     <audio controls hidden id="audio_player">
         <source src="../audio/music.mp3" type="audio/mp3">
@@ -65,14 +69,13 @@
         
       </script>
     <br>
-    <br>
     <div class="largeScreen row">
         <div class="col">
             <img class="w-75" src="../images/hacking.webp" >
         </div>
         <div class="col mx-auto align-self-center">
             <h1 class="watching">
-                WE ARE <a class="link-danger" href="../home.html">WATCHING</a>
+                WE ARE <a class="link-danger" href="../home.html" style="text-decoration: underline;">WATCHING</a>
             </h1>
         </div>
     </div>
@@ -87,8 +90,6 @@
         </div>
     </div>
     <br>
-    <br>
-    <div class="space"></div>
 
     <h5 class="text-warning">
         JAVA 1
@@ -103,34 +104,41 @@
         </p>
         <ul>
             <li>
-                <a href="JAVA_1/LAB_1.java">
-                    LAB 1
-                </a>
+                <a href="JAVA_1/LAB_1.java">LAB 1</a>
             </li>
             <li>
-                <a href="JAVA_1/ASSIGNMENT_1_OLD.java">
-                    ASSIGNMENT 1 (OLD)
-                </a>
+                <a href="JAVA_1_EXP/LAB_1.html" class="link-success">LAB 1 <strong>شرح</strong></a>
             </li>
             <li>
-                <a href="JAVA_1/ASSIGNMENT_1_NEW.java">
-                    ASSIGNMENT 1 (NEW)
-                </a>
+                <a href="JAVA_1/ASSIGNMENT_1_OLD.java">ASSIGNMENT 1 (OLD)</a>
             </li>
             <li>
-                <a href="JAVA_1/LAB_2.java">
-                    LAB 2
-                </a>
+                <a href="JAVA_1/ASSIGNMENT_1_NEW.java">ASSIGNMENT 1 (NEW)</a>
             </li>
             <li>
-                <a href="../home.html">
-                    LAB 3
-                </a>
+                <a href="JAVA_1_EXP/ASSIGNMENT_1.html" class="link-success">ASSIGNMENT 1 <strong>شرح</strong></a>
+            </li>
+            <li>
+                <a href="JAVA_1/LAB_2.java">LAB 2</a>
+            </li>
+            <li>
+                <a href="JAVA_1_EXP/LAB_2.html" class="link-success">LAB 2 <strong>شرح</strong></a>
+            </li>
+
+            <li>
+                <a href="../home.html">LAB 3</a>
+            </li>
+            <li>
+                <a href="JAVA_1/LAB_3.html" class="link-success">LAB 3 <strong>شرح</strong></a>
             </li>
         </ul>
     </div>
 
-    <div id = "toHide" style="position: fixed; top: 5px; left: 5px; width: 100%; height: 100%; padding-top: 150px; text-align: center; background: #eee; background-color: black;">
+    <div class="space">
+        
+    </div>
+
+    <!-- <div id = "toHide" style="position: fixed; top: 5px; left: 5px; width: 100%; height: 100%; padding-top: 150px; text-align: center; background: #eee; background-color: black;">
         <div id="innerHide" style="position: fixed; top: 45%; left: 50%; transform: translate(-50%, -50%);">
             <a id="enterBtn" class="btn btn-lg btn-outline-danger mt-5 px-5" onclick="hide()">
                 ENTER
@@ -175,7 +183,7 @@
                 setTimeout(function() {
                     document.getElementById("myVideo").hidden = true;
                     document.getElementById("toHide").hidden = true;
-                }, 3000);
+                }, 5000);
 
                 setTimeout(() => {
                     let el = document.getElementById("audio_player");
@@ -188,7 +196,7 @@
     </div>
     <video id="myVideo" hidden>
         <source src="../video/video.mp4#t=5,30">
-    </video>
+    </video> -->
 
 </body>
 

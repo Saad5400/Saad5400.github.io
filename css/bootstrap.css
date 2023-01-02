@@ -11022,3 +11022,13 @@ legend {
 .popover-title {
   border-bottom: none;
 }
+
+.space {
+  margin: 200px;
+  height: 200px;
+}
+
+.inline-code {
+  direction: ltr;
+  text-align: end;
+}
