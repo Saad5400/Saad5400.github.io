@@ -21,6 +21,15 @@
                 margin-bottom: 50px;
             }
 
+            #myVideo {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+                }
+
             @media (max-width: 500px) {
                 .space {
                     margin-top: 3vh;
@@ -32,6 +41,7 @@
                 .largeScreen {
                     display: none;
                 }
+
             }
             @media (min-width: 500px) {
                 .smallScreen {
@@ -47,10 +57,10 @@
       </audio>
       <script>
         window.onmousemove = function() {
-            let el = document.getElementById("audio_player");
-            if (el.paused) {
-                el.play();
-            }
+            // let el = document.getElementById("audio_player");
+            // if (el.paused) {
+            //     el.play();
+            // }
         }
         
       </script>
@@ -121,17 +131,37 @@
     </div>
 
     <div id = "toHide" style="position: fixed; top: 5px; left: 5px; width: 100%; height: 100%; padding-top: 150px; text-align: center; background: #eee; background-color: black;">
-        <div style="position: fixed; top: 45%; left: 50%; transform: translate(-50%, -50%);">
+        <div id="innerHide" style="position: fixed; top: 45%; left: 50%; transform: translate(-50%, -50%);">
             <a id="enterBtn" class="btn btn-lg btn-outline-danger mt-5 px-5" onclick="hide()">
                 ENTER
             </a>
         </div>
         <script>
             function hide() {
-                document.getElementById("toHide").remove();
+                let vid = document.getElementById("myVideo");
+                vid.hidden = false;
+                vid.play();
+                setTimeout(function() {
+                    document.getElementById("innerHide").hidden = true;
+                }, 500);
+
+                setTimeout(function() {
+                    document.getElementById("myVideo").hidden = true;
+                    document.getElementById("toHide").hidden = true;
+}, 3000);
             }
+
+            setTimeout(() => {
+                let el = document.getElementById("audio_player");
+                if (el.paused) {
+                    el.play();
+                }
+            }, 20000);
         </script>
     </div>
+    <video id="myVideo" hidden>
+        <source src="../video/video.mp4#t=5,30">
+    </video>
 
 </body>
 
