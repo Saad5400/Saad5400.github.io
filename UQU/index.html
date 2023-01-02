@@ -179,19 +179,23 @@
                 setTimeout(function() {
                     document.getElementById("innerHide").hidden = true;
                 }, 500);
+            }
 
-                setTimeout(function() {
+            let interval = setInterval(function () {
+                let vid = document.getElementById("myVideo");
+                if (vid.currentTime > 10) {
                     document.getElementById("myVideo").hidden = true;
                     document.getElementById("toHide").hidden = true;
-                }, 5000);
+                    setTimeout(() => {
+                        let el = document.getElementById("audio_player");
+                        if (el.paused) {
+                            el.play();
+                        }
+                    }, 5500);
+                    clearInterval(interval);
+                }
+            }, 10);
 
-                setTimeout(() => {
-                    let el = document.getElementById("audio_player");
-                    if (el.paused) {
-                        el.play();
-                    }
-                }, 10000);
-            }
         </script>
     </div>
     <video id="myVideo" hidden>
