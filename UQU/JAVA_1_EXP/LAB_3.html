@@ -367,20 +367,94 @@ public class AppTest {
     }
 
 }
-    </pre>
+</pre>
 
-    <h5 class="text-primary" id="exp">
-        الشرح
-    </h5>
+<h5 class="text-primary" id="exp">
+    الشرح
+</h5>
 
+<br>
+
+<p>
+    ملاحظة مهمة: فيه ايرور في ملف التيست AppTest.java، اذا واجهت الايرور انسخ <a href="#testCode">كود التيست</a> من هنا والصقه في src/test/../AppTest.java. <br>
+    تم شرح ال printf في <a href="LAB_2.html#exp">لاب 2</a>
+</p>
+
+<hr class="thicc-hr">
+
+<pre class="prettyprint" dir="ltr">
+    /* Write a method drivingCost() with input parameters milesPerGallon, dollarsPerGallon, and milesDriven that returns the dollar cost to drive those miles. All items are of type double.
+    * Define that method in a program whose inputs are the car's miles per gallon and the price of gas in dollars per gallon (both doubles). */
+</pre>
+<p>
+    اكتب ميثود تاخذ ثلاثة متغيرات اللي هي milesPerGallon, dollarsPerGallon, and milesDriven من نوع double.
     <br>
+    المطلوب من الميثود انها تحسب تكلفة قيادة السيارة حسب المسافة المقطوعة، وتكلفة الجالون، وعدد الاميال لكل جالون.
+    <br>
+    عشان نكتب ميثود في جافا، نبغا نخليها static و public ونحدد نوع القيمة اللي حيصير لها return، في هذي الحالة Double بعدها اسم الميثود ونفتح قوس فيه المتغيرات ونقفله، وبعدها الاقواس المتعرجة نكتب داخلها الكود، وضروري يكون فيه return.
+</p>
+<pre class="prettyprint" dir="ltr">
+    public static Double drivingCost(Double milesPerGallon, Double dollarsPerGallon, Double milesDriven) {
+        Double result = 0.0;
+        return result;
+    }
+</pre>
 
-    <p>
-        ملاحظة مهمة: فيه ايرور في ملف التيست AppTest.java، اذا واجهت الايرور انسخ <a href="#testCode">كود التيست</a> من هنا والصقه في src/test/../AppTest.java
-    </p>
+<p>
+    كذا يكون كتبنا الميثود، لكن ما نفذنا الحسابات، عشان نجيب التكلفة لازم نجيب عدد الاميال ونضربها في سعر الميل الواحد.
+    <br>
+    المعطيات: الاميال المقطوعة، الاميال لكل جالون، سعر الجالون بالدولار.
+    <br>
+    نقدر نجيب عدد الجوالين باننا نقسم الاميال لكل جالون (milesPerGallon) على الاميال المقطوعة (milesDriven).
+    <br>
+    ودحين عندنا عدد الجوالين، وعندنا سعر الجالون الواحد (dollarsPerGallon)، نضربهم في بعض ويعطينا التكلفة.
+</p>
 
+<pre class="prettyprint" dir="ltr">
+    public static Double drivingCost(Double milesPerGallon, Double dollarsPerGallon, Double milesDriven) {
+        return (milesDriven/milesPerGallon) * dollarsPerGallon;
+    }
+</pre>
+<hr class="thicc-hr">
+<pre class="prettyprint" dir="ltr">
+    /* Output the gas cost for 10 miles, 50 miles, and 400 miles, by calling your drivingCost() method three times.
+    * Output each floating-point value with two digits after the decimal point, which can be achieved as follows:
+    * System.out.printf("%.2f", yourValue);
+    * 
+    * The output ends with a newline. */
+</pre>
+<p>
+    باقي جزئية طباعة الميثود، المطلوب طباعة النتيجة ل10، 50، 400 ميل، بينهم مسافة، ورقمين فقط بعد الفاصلة باستعمال printf.<br>
+    كود الطباعة حيكون في الميثود part2
+</p>
+<pre class="prettyprint" dir="ltr">
+    System.out.println("Enter milesPerGallon: ");
+    Double mpg = scnr.nextDouble();
+    System.out.println("Enter dollarsPerGallon: ");
+    Double dpg = scnr.nextDouble();
+    System.out.printf("%.2f %.2f %.2f\n", drivingCost(mpg, dpg, 10.0), drivingCost(mpg, dpg, 50.0), drivingCost(mpg, dpg, 400.0));
+</pre>
+<hr class="thicc-hr">
 
+<pre class="prettyprint" dir="ltr">
+    /* Given three floating-point numbers x, y, and z, 
+    * output x to the power of z, x to the power of (y to the power of z),
+    * the absolute value of y, and the square root of (xy to the power of z). */
+</pre>
 
+<p>
+    نقدر نستعمل كلاس Math المتوفر في جافا بشكل افتراضي بدون الحاجة الى امبورت.<br>
+    عشان نجيب رقم اس رقم نستعمل Math.pow() وعشان نجيب القيمة المطلقة Math.abs() وعشان الجذر التربيعي Math.sqrt(). <br>
+    مثلا:
+</p>
+
+<pre class="prettyprint" dir="ltr">
+    System.out.println(Math.pow(2, 3)); // راح يطبع 8
+    System.out.println(Math.pow(2, Math.pow(3, 2))); // 512 = 2^9 = 2^(3^2)
+    System.out.println(Math.abs(-10)); // راح يطبع 10
+    System.out.println(Math.sqrt(9)); // راح يطبع 3
+    System.out.println( Math.sqrt( Math.abs( - Math.pow(3, 2) ) ) ); // جربه بنفسك :)
+</pre>
 
 <hr class="thicc-hr">
 <a class="link-info" href="#fullCode">الكود كامل</a>
