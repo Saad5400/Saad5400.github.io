@@ -151,42 +151,31 @@ public class App {
     <hr class="thicc-hr">
 
     <pre class="prettyprint" dir="ltr">
-             /* The following equation estimates the average calories burned for a person when exercising, 
-             * which is based on a scientific journal article (@see {@linktourl https://www.tandfonline.com/doi/abs/10.1080/02640410470001730089}):
-             * 
-             * Calories = ( (Age x 0.2757) + (Weight x 0.03295) + (Heart Rate x 1.0781) — 75.4991 ) x Time / 8.368
-             * 
-             * Write a program using inputs age (years), weight (pounds), heart rate (beats per minute), and time (minutes), respectively. Output the average calories burned for a person.
-             * 
-             * Output each floating-point value with two digits after the decimal point, which can be achieved as follows:
-             * System.out.printf("%.2f", yourValue);
-             * Ex: If the input is:
-             * 49 155 148 60
-             * the output is:
-             * Calories: 736.21 calories
-             */
-        
-            public static void part2(){
-                Scanner scnr = new Scanner(System.in);   
-        
-                /* Write your code here */
-                System.out.println("Enter the following values (IN ORDER): age (years), weight (pounds), heart rate (beats per minute), and time (minutes)");
-                
-                double age = scnr.nextDouble();
-                double weight = scnr.nextDouble();
-                double heartRate = scnr.nextDouble();
-                double time = scnr.nextDouble();
-        
-                double result = ( (age * 0.2757) + (weight * 0.03295) + (heartRate * 1.0781) - 75.4991 ) * time / 8.368;
-                
-                System.out.printf("Calories: %.2f calories\n", result);
-                
-                scnr.close();
-            }
+        // Output each floating-point value with two digits after the decimal point, which can be achieved as follows:
+           System.out.printf("%.2f", yourValue);
     </pre>
 
     <p>
-        
+        ال printf يشبه ال print اللي ما يطبع سطر جديد، لكن ميزته انه يقدر يزين او يسوي format للطباعة.
+        <br>
+        الطريقة انك تحط علامة النسبة المئوية وبعدها نوع المتغير، مثلا %f وجافا راح تستبدلها بقيمة المتغير.
+        <br>
+        <pre class="prettyprint text-start" dir="ltr" >
+            float percentage = 6.641;
+            String name = "bro code";
+            int count = 5;
+
+            System.out.printf("%s", name); // راح يطبع bro code
+            System.out.printf("result is %.1f", percentage); // راح يطبع result is 6.6
+            System.out.printf("We completed %.4f of the lab", percentage); // راح يطبع We completed 6.6410 of the lab
+            System.out.printf("My name is %s, and I have %03d dollars", name, count) // راح يطبع My name is bro code, and I have 005 dollars
+        </pre>
+    </p>
+
+    <p>
+        نقدر نحط خصائص لطريقة الطباعة بين ال% والحرف اللي يمثل نوع المتغير، مثلا ال.2 معناتها رقمين بعد الفاصلة فقط.
+        <br>
+        ونقدر نحط اكثر من متغير في الطباعة، اهم شي انها تكون بنفس الترتيب
     </p>
 
 <hr class="thicc-hr">

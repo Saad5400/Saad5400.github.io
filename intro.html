@@ -55,11 +55,30 @@
                 transform: translate(-50%, -50%);
             }
 
-            @media (max-width: 500px) {
-
+            .space {
+                margin-top: 3vh;
             }
-            @media (min-width: 500px) {
+            .watching {
+                font-size: 30px;
+                margin-top: 10px;
+            }
 
+
+            .space {
+                margin-top: 3vh;
+            }
+            .watching {
+                font-size: 30px;
+                margin-top: 10px;
+            }
+            /* Change image size and center it if screen width is more than 500px */
+            @media (min-width: 500px) {
+                .myImage {
+                    width: 80%;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
     </style>
 </head>
@@ -70,7 +89,17 @@
     <!-- You can have any elements here as any normal html file -->
     <!-- they will be shown after the intro is finished -->
 
-    <!-- element balh blah blah -->
+    <br>
+    <div>
+        <div class="row">
+            <img id="myImage" class="myImage text-center" src="../images/hacking.webp" >
+        </div>
+        <div class="row">
+            <h1 class="watching text-center" id="threatText">
+                WE ARE <a class="link-danger" href="../home.html">WATCHING</a>
+            </h1>
+        </div>
+    </div>
 
     <!-- This div contains everything including the video -->
     <div id = "toHide" class="fullScreenDiv">
@@ -109,14 +138,34 @@
         let skipEl = document.getElementById("skipHint");
         let innerDiv = document.getElementById("innerHide");
         let mainDiv = document.getElementById("toHide");
+        let img = document.getElementById("myImage");
+        let threatText = document.getElementById("threatText");
 
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const redirectUrl = urlParams.get('redirect');
-        let redirected = false;
+        const imgSrc = urlParams.get('imgSrc');
+        const text = urlParams.get('text');
 
+        let redirected = false;
         const videoEndTime = 10;
         const redirectDelay = 0.3;
+
+        // set the image src
+        if (imgSrc == 'none') {
+            img.src = "";
+        }
+        else if (imgSrc) {
+            img.src = imgSrc;
+        }
+
+        // set the text
+        if (text == 'none') {
+            threatText.innerHTML = "";
+        }
+        else if (text) {
+            threatText.innerHTML = text;
+        } 
 
         // Skip video when screen is clicked more than 7 times
         window.onclick = function() {
