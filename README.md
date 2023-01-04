@@ -1,8 +1,8 @@
-# [index.html](Saad5400.github.io/index.html)
+# [index.html](https://Saad5400.github.io/index.html)
 
 Personal static website, I will update it with my career advancement and projects.
 
-# [UQU/index.html](Saad5400.github.io/UQU/index.html)
+# [UQU/index.html](https://Saad5400.github.io/UQU/index.html)
 
 Umm Al Qura University, Programming 1 exercises solutions and explaination
 
@@ -14,7 +14,7 @@ Folder contains all the java files.
 
 Folder contains all the explaination files (html).
 
-# [intro.html](Saad5400.github.io/intro.html)
+# [intro.html](https://Saad5400.github.io/intro.html)
 
 Html page with only the intro and skull image as well as some text under
 
@@ -25,7 +25,7 @@ It has 3 url parameters
 
 For example: (copy the whole link and paste it so it works)
 
-Saad5400.github.io/intro.html?text=Hello+<a+class="link-danger"+href="../home.html">World!</a>&imgSrc=none&redirect=https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[https://Saad5400.github.io/intro.html?text=Hello+<a+class="link-danger"+href="../home.html">World!</a>&imgSrc=none&redirect=https://www.youtube.com/watch?v=dQw4w9WgXcQ](https://Saad5400.github.io/intro.html?text=Hello+<a+class="link-danger"+href="../home.html">World!</a>&imgSrc=none&redirect=https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 # [home.html](Saad5400.github.io/intro.html)
 
