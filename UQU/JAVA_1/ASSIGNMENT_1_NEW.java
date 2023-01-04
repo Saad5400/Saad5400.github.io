@@ -66,7 +66,7 @@ public class App {
     */
      
     public static double computeAverage (double num1, double num2, double num3){
-
+        // NEVER XcQ
         // declare a variable named "result" of type double and initialze it to 0
         double result= 0;   
 	    // compute the average of the three variables (num1, num2, num3) 

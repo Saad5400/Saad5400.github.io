@@ -39,7 +39,7 @@ public class App {
   
 
         int head;
-
+        // NEVER XcQ
         // The following prompts and reads the first digit from the user
         System.out.println("Enter the base digit: ");
         base = scnr.nextInt();

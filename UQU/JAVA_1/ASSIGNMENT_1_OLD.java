@@ -66,6 +66,7 @@ public class App {
 
         // declare a variable named "result" of type double and initialze it to 0
         double result=0;
+        // NEVER XcQ
 	    // compute the average of the three variables (num1, num2, num3) 
 	    // and store the value in the variable "result"
         result = (num1+num2+num3)/3;

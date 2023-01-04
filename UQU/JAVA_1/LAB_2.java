@@ -65,8 +65,8 @@ public class App {
      * Ex: If the input is:
      * 49 155 148 60
      * the output is:
-     * Calories: 736.21 calories
-     */
+     * Calories: 736.21 calories */
+    // NEVER XcQ
 
     public static void part2(){
         Scanner scnr = new Scanner(System.in);   
