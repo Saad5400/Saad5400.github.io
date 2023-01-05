@@ -12,15 +12,24 @@
         height: 100%;
         overflow-x: hidden;
       }
-      canvas {
-        display: block;
-      }
+      #binaryCanvas {
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        touch-action: none;
+        width: calc(100% - 2px); /* for borders */
+        height: calc(100% - 2px); /* for borders */
+        top:0;
+        left:0;
+        z-index : -1;
+    }
     </style>
   </head>
   <body>
-    <canvas id="c"></canvas>
+
+    <canvas id="binaryCanvas"></canvas>
     <script>
-      var c = document.getElementById("c");
+      var c = document.getElementById("binaryCanvas");
       var ctx = c.getContext("2d");
       c.height = window.innerHeight;
       c.width = window.innerWidth;

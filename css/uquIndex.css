@@ -7,7 +7,7 @@
   
 .card {    
     margin: 10px;
-    height: 150px;
+    height: 120px;
     box-shadow: 0 50px 100px rgba(0, 0, 0, 10);
     padding: 20px;
     overflow: hidden;
@@ -15,6 +15,7 @@
     color: black;
     background: rgba(155, 155, 155, 0.2);
     backdrop-filter: blur(1px);
+    border: 1px solid rgba(255, 255, 255, 0.1);    
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); */
@@ -49,7 +50,7 @@
     
 .card .content h2 {
     margin-left: 15px;
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: white;
 }
   
@@ -111,9 +112,9 @@
     z-index: 2;
     background: rgba(169, 30, 30, 0.8);
     backdrop-filter: blur(1px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom-right-radius: 5px;
 }
   
 .toggle ion-icon {

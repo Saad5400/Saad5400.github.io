@@ -93,7 +93,7 @@ function hide() {
 
 let interval = setInterval(function () {
     if (vid.currentTime > videoEndTime) {
-        java1Card.classList += " animate__animated animate__fadeIn animate__delay-4s";
+        java1Card.classList += " animate__animated animate__fadeIn animate__delay-2s";
         vid.hidden = true;
         skipEl.hidden = true;
         mainDiv.hidden = true;
