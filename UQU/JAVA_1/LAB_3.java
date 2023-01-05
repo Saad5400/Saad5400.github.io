@@ -52,7 +52,7 @@ public class App {
         Scanner scnr = new Scanner(System.in); 
         
         /* Write your code here which calls the method lapsToMiles */
-        System.out.println("Enter laps: ");
+        //System.out.println("Enter laps: ");
         System.out.printf("%.2f\n", lapsToMiles(scnr.nextDouble()));
     }
 
@@ -66,7 +66,6 @@ public class App {
      * Output each floating-point value with two digits after the decimal point, which can be achieved as follows:
      * System.out.printf("%.2f", yourValue);
      * 
-     * NEVER XcQ
      * The output ends with a newline.
      * 
      * Ex: If the input is:
@@ -89,9 +88,9 @@ public class App {
         Scanner scnr = new Scanner(System.in);   
 
         /* Write your code here which calls drivingCost */
-        System.out.println("Enter milesPerGallon: ");
+        //System.out.println("Enter milesPerGallon: ");
         Double mpg = scnr.nextDouble();
-        System.out.println("Enter dollarsPerGallon: ");
+        //System.out.println("Enter dollarsPerGallon: ");
         Double dpg = scnr.nextDouble();
         System.out.printf("%.2f %.2f %.2f\n", drivingCost(mpg, dpg, 10.0), drivingCost(mpg, dpg, 50.0), drivingCost(mpg, dpg, 400.0));
     }
@@ -115,7 +114,7 @@ public class App {
 
         /* Write your code here */
         Double x, y, z;
-        System.out.println("Enter a value (in order) for x, y, z");
+        //System.out.println("Enter a value (in order) for x, y, z");
         x = scnr.nextDouble();
         y = scnr.nextDouble();
         z = scnr.nextDouble();

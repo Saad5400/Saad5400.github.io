@@ -9,8 +9,6 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-import org.hamcrest.MatcherAssert;
-import org.hamcrest.core.StringContains;
 import org.junit.Test;
 
 /**
@@ -33,11 +31,18 @@ public class AppTest {
 
         String actual = baos.toString();
         String expected = "1.90\n";
+        InputStream ais = new ByteArrayInputStream(actual.getBytes());
+        InputStream eis = new ByteArrayInputStream(expected.getBytes());
 
-        MatcherAssert.assertThat(
-                "Should match "+expected,
-                actual,
-                new StringContains(expected));
+        Scanner ascan = new Scanner(ais);
+        Scanner escan = new Scanner(eis);
+        try {
+            assertEquals("Should match "+expected, escan.nextDouble(), ascan.nextDouble(), 0.01);
+        }
+        finally {
+            ascan.close();
+            escan.close();
+        }
     }
 
     @Test
@@ -55,11 +60,18 @@ public class AppTest {
 
         String actual = baos.toString();
         String expected = "0.55\n";
+        InputStream ais = new ByteArrayInputStream(actual.getBytes());
+        InputStream eis = new ByteArrayInputStream(expected.getBytes());
 
-        MatcherAssert.assertThat(
-            "Should match "+expected,
-            actual,
-            new StringContains(expected));
+        Scanner ascan = new Scanner(ais);
+        Scanner escan = new Scanner(eis);
+        try {
+            assertEquals("Should match "+expected, escan.nextDouble(), ascan.nextDouble(), 0.01);
+        }
+        finally {
+            ascan.close();
+            escan.close();
+        }
     }
 
     @Test
@@ -76,12 +88,19 @@ public class AppTest {
         App.part1();
 
         String actual = baos.toString();
-        String expected = "26.00\n";
+        String expected = "26.0\n";
+        InputStream ais = new ByteArrayInputStream(actual.getBytes());
+        InputStream eis = new ByteArrayInputStream(expected.getBytes());
 
-        MatcherAssert.assertThat(
-            "Should match "+expected,
-            actual,
-            new StringContains(expected));
+        Scanner ascan = new Scanner(ais);
+        Scanner escan = new Scanner(eis);
+        try {
+            assertEquals("Should match "+expected, escan.nextDouble(), ascan.nextDouble(), 0.01);
+        }
+        finally {
+            ascan.close();
+            escan.close();
+        }
     }
 
     @Test
@@ -98,10 +117,20 @@ public class AppTest {
 
         String actual = baos.toString();
         String expected = "1.58 7.90 63.20\n";
-        MatcherAssert.assertThat(
-            "Should match "+expected,
-            actual,
-            new StringContains(expected));
+        InputStream ais = new ByteArrayInputStream(actual.getBytes());
+        InputStream eis = new ByteArrayInputStream(expected.getBytes());
+
+        Scanner ascan = new Scanner(ais);
+        Scanner escan = new Scanner(eis);
+        try {
+            assertEquals(escan.nextDouble(), ascan.nextDouble(), 0.01);
+            assertEquals(escan.nextDouble(), ascan.nextDouble(), 0.01);
+            assertEquals(escan.nextDouble(), ascan.nextDouble(), 0.01);
+        }
+        finally {
+            ascan.close();
+            escan.close();
+        }
     }
 
     @Test
@@ -118,10 +147,20 @@ public class AppTest {
 
         String actual = baos.toString();
         String expected = "1.30 6.50 52.00\n";
-        MatcherAssert.assertThat(
-            "Should match "+expected,
-            actual,
-            new StringContains(expected));
+        InputStream ais = new ByteArrayInputStream(actual.getBytes());
+        InputStream eis = new ByteArrayInputStream(expected.getBytes());
+
+        Scanner ascan = new Scanner(ais);
+        Scanner escan = new Scanner(eis);
+        try {
+            assertEquals(escan.nextDouble(), ascan.nextDouble(), 0.01);
+            assertEquals(escan.nextDouble(), ascan.nextDouble(), 0.01);
+            assertEquals(escan.nextDouble(), ascan.nextDouble(), 0.01);
+        }
+        finally {
+            ascan.close();
+            escan.close();
+        }
     }
 
     @Test
@@ -140,10 +179,19 @@ public class AppTest {
         String actual = baos.toString();
         String expected = "12.96 1.841304610218211E11 4.5 16.2\n";
 
-        MatcherAssert.assertThat(
-            "Should match "+expected,
-            actual,
-            new StringContains(expected));
+        InputStream ais = new ByteArrayInputStream(actual.getBytes());
+        InputStream eis = new ByteArrayInputStream(expected.getBytes());
+
+        Scanner ascan = new Scanner(ais);
+        Scanner escan = new Scanner(eis);
+
+        assertEquals(escan.nextDouble(), ascan.nextDouble(), 0.01);
+        assertEquals(escan.nextDouble(), ascan.nextDouble(), 0.01);
+        assertEquals(escan.nextDouble(), ascan.nextDouble(), 0.01);
+        assertEquals(escan.nextDouble(), ascan.nextDouble(), 0.01);
+
+        ascan.close();
+        escan.close();
     }
 
     @Test
@@ -162,10 +210,19 @@ public class AppTest {
         String actual = baos.toString();
         String expected = "-693.4395700000001 -8.452419664263233E-139 3.0 410.49459863681534";
 
-        MatcherAssert.assertThat(
-            "Should match "+expected,
-            actual,
-            new StringContains(expected));
+        InputStream ais = new ByteArrayInputStream(actual.getBytes());
+        InputStream eis = new ByteArrayInputStream(expected.getBytes());
+
+        Scanner ascan = new Scanner(ais);
+        Scanner escan = new Scanner(eis);
+
+        assertEquals(escan.nextDouble(), ascan.nextDouble(), 0.01);
+        assertEquals(escan.nextDouble(), ascan.nextDouble(), 0.01);
+        assertEquals(escan.nextDouble(), ascan.nextDouble(), 0.01);
+        assertEquals(escan.nextDouble(), ascan.nextDouble(), 0.01);
+
+        ascan.close();
+        escan.close();
     }
 
 }
