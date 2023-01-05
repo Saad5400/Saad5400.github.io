@@ -1,12 +1,42 @@
+// add li to ul in java 1 card
+const java1Card = document.getElementById("java1Card");
+const java1Ul = document.getElementById("java1Ul");
+const liArray = [
+    {text: "LAB 1",                 link: "JAVA_1/LAB_1.java"               },
+    {text: "LAB 1 (شرح)",           link: "JAVA_1_EXP/LAB_1.html"           },
+    {text: "ASSIGNMENT 1 (OLD)",    link: "JAVA_1/ASSIGNMENT_1_OLD.java"    },
+    {text: "ASSIGNMENT 1 (NEW)",    link: "JAVA_1/ASSIGNMENT_1_NEW.java"    },
+    {text: "ASSIGNMENT 1 (شرح)",    link: "JAVA_1_EXP/ASSIGNMENT_1.html"    },
+    {text: "LAB 2",                 link: "JAVA_1/LAB_2.java"               },
+    {text: "LAB 2 (شرح)",           link: "JAVA_1_EXP/LAB_2.html"           },
+    {text: "LAB 3 (App.java)",      link: "JAVA_1/LAB_3.java"               },
+    {text: "LAB 3 (AppTest.java)",  link: "JAVA_1/LAB_3_TEST.java"          },
+    {text: "LAB 3 (شرح)",           link: "JAVA_1_EXP/LAB_3.html"           },
+];
+
+liArray.forEach(x => {
+
+    let type = x.link.includes("html") ? 1 : 0;
+    let icon = type == 1 ? "skull-outline" : "document-text-outline";
+
+    java1Ul.innerHTML += `                
+    <li>
+    <a href="${x.link}" target="_blank" rel="noopener noreferrer">
+        <ion-icon name="${icon}"></ion-icon>
+        ${x.text}
+    </a>
+    </li>`;
+});
+
 const videoEndTime = 10;
 const startMusicAfterMS = 5500 + ((10 - videoEndTime) * 1000);
 
-let vid = document.getElementById("myVideo");
-let skipEl = document.getElementById("skipHint");
-let innerDiv = document.getElementById("innerHide");
-let mainDiv = document.getElementById("toHide");
+const vid = document.getElementById("myVideo");
+const skipEl = document.getElementById("skipHint");
+const innerDiv = document.getElementById("innerHide");
+const mainDiv = document.getElementById("toHide");
 
-let quotes = [
+const quotes = [
     '“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.”',
     '“Experience is the name everyone gives to their mistakes.”',
     '“Java is to Javascript what car is to Carpet.”',
@@ -28,6 +58,13 @@ let quotes = [
 
 let randomNum =  Math.floor(Math.random() * (quotes.length));
 document.getElementById("quote").innerHTML = quotes[randomNum];
+
+// card
+const card = document.querySelector(".card");
+const cardtoggle = document.querySelector(".toggle");
+cardtoggle.onclick = function () {
+card.classList.toggle("active");
+};
 
 // screen clicks counter
 let clickCount = 0;
@@ -56,6 +93,7 @@ function hide() {
 
 let interval = setInterval(function () {
     if (vid.currentTime > videoEndTime) {
+        java1Card.classList += " animate__animated animate__fadeIn animate__delay-4s";
         vid.hidden = true;
         skipEl.hidden = true;
         mainDiv.hidden = true;
