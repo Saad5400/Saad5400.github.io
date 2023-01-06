@@ -8,18 +8,12 @@
 .card {    
     margin: 10px;
     height: 120px;
-    box-shadow: 0 50px 100px rgba(0, 0, 0, 10);
-    padding: 20px;
-    overflow: hidden;
-    transition: height 0.5s ease-in-out;
-    color: black;
     background: rgba(155, 155, 155, 0.2);
     backdrop-filter: blur(1px);
-    border: 1px solid rgba(255, 255, 255, 0.1);    
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-    /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); */
-    border-radius: 5px;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 10);
+    overflow: hidden;
+    padding: 15px;
+    transition: height 0.5s ease-in-out;
 }
   
 .card.active {
@@ -50,7 +44,7 @@
     
 .card .content h2 {
     margin-left: 15px;
-    font-size: 1.2em;
+    font-size: 120%;
     color: white;
 }
   
@@ -110,11 +104,6 @@
     align-items: center;
     cursor: pointer;
     z-index: 2;
-    background: rgba(169, 30, 30, 0.8);
-    backdrop-filter: blur(1px);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom-right-radius: 5px;
 }
   
 .toggle ion-icon {
@@ -146,7 +135,8 @@ hr {
     height: 100%;
     object-fit: fill;
     z-index: 7;
-    }
+}
+
 
 .fullScreenDiv {
     position: fixed;
@@ -190,6 +180,23 @@ hr {
 
 a {
     text-decoration: none;
+}
+
+.iconSword {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: inline;
+}
+
+.swordsDiv {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
 }
 
 @media (max-width: 500px) {

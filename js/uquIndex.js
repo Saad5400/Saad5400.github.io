@@ -18,12 +18,14 @@ liArray.forEach(x => {
 
     let type = x.link.includes("html") ? 1 : 0;
     let icon = type == 1 ? "skull-outline" : "document-text-outline";
+    let swords = x.text.includes("LAB 3") ? '<div class="swordsDiv"><img class="iconSword" src="../images/swords.png"></div>' : ""
 
     java1Ul.innerHTML += `                
     <li>
     <a href="${x.link}" target="_blank" rel="noopener noreferrer">
         <ion-icon name="${icon}"></ion-icon>
         ${x.text}
+        ${swords}
     </a>
     </li>`;
 });
@@ -32,6 +34,7 @@ const videoEndTime = 10;
 const startMusicAfterMS = 5500 + ((10 - videoEndTime) * 1000);
 
 const vid = document.getElementById("myVideo");
+vid.controls = false;
 const skipEl = document.getElementById("skipHint");
 const innerDiv = document.getElementById("innerHide");
 const mainDiv = document.getElementById("toHide");
@@ -93,7 +96,7 @@ function hide() {
 
 let interval = setInterval(function () {
     if (vid.currentTime > videoEndTime) {
-        java1Card.classList += " animate__animated animate__fadeIn animate__delay-2s";
+        // java1Card.classList += " animate__animated animate__fadeIn animate__delay-2s";
         vid.hidden = true;
         skipEl.hidden = true;
         mainDiv.hidden = true;
