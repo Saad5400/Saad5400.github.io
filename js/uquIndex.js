@@ -2,17 +2,53 @@
 const java1Card = document.getElementById("java1Card");
 const java1Ul = document.getElementById("java1Ul");
 const liArray = [
-    {text: "LAB 1",                 link: "JAVA_1/LAB_1.java"               },
-    {text: "LAB 1 (شرح)",           link: "JAVA_1_EXP/LAB_1.html"           },
-    {text: "ASSIGNMENT 1 (OLD)",    link: "JAVA_1/ASSIGNMENT_1_OLD.java"    },
-    {text: "ASSIGNMENT 1 (NEW)",    link: "JAVA_1/ASSIGNMENT_1_NEW.java"    },
-    {text: "ASSIGNMENT 1 (شرح)",    link: "JAVA_1_EXP/ASSIGNMENT_1.html"    },
-    {text: "LAB 2",                 link: "JAVA_1/LAB_2.java"               },
-    {text: "LAB 2 (شرح)",           link: "JAVA_1_EXP/LAB_2.html"           },
-    {text: "LAB 3 (App.java)",      link: "JAVA_1/LAB_3.java"               },
-    {text: "LAB 3 (AppTest.java)",  link: "JAVA_1/LAB_3_TEST.java"          },
-    {text: "LAB 3 (شرح)",           link: "JAVA_1_EXP/LAB_3.html"           },
+    {text: "LAB 1",                 link: "JAVA_1/LAB_1.java",               apiKey: 0},
+    {text: "LAB 1 (شرح)",           link: "JAVA_1_EXP/LAB_1.html",           apiKey: 1},
+    {text: "ASSIGNMENT 1 (OLD)",    link: "JAVA_1/ASSIGNMENT_1_OLD.java",    apiKey: 2},
+    {text: "ASSIGNMENT 1 (NEW)",    link: "JAVA_1/ASSIGNMENT_1_NEW.java",    apiKey: 3},
+    {text: "ASSIGNMENT 1 (شرح)",    link: "JAVA_1_EXP/ASSIGNMENT_1.html",    apiKey: 4},
+    {text: "LAB 2",                 link: "JAVA_1/LAB_2.java",               apiKey: 5},
+    {text: "LAB 2 (شرح)",           link: "JAVA_1_EXP/LAB_2.html",           apiKey: 6},
+    {text: "LAB 3 (App.java)",      link: "JAVA_1/LAB_3.java",               apiKey: 7},
+    {text: "LAB 3 (AppTest.java)",  link: "JAVA_1/LAB_3_TEST.java",          apiKey: 8},
+    {text: "LAB 3 (شرح)",           link: "JAVA_1_EXP/LAB_3.html",           apiKey: 9},
 ];
+
+function getValue(key, callback) {
+    $.ajax({
+        url: 'https://rra5400.azurewebsites.net/Main/ForceUpdateKeyValue',
+        data: {
+            key: key
+        },
+        type: 'GET',
+        success: function (response) {
+            let value = response[1];
+            console.log(value);
+            if (callback == "inc") {
+                incrementCounter(key, value);
+            }
+            else {
+                document.getElementById(callback).innerHTML = value;
+            }
+        },
+      });
+}
+function incrementCounter(key, value = null) {
+    if (value == null) {
+        return value = getValue(key, "inc");
+    }
+    $.ajax({
+        url: 'https://rra5400.azurewebsites.net/Main/ForceUpdateKeyValue',
+        data: {
+            key: key,
+            value: value + 1,
+        },
+        type: 'GET',
+        success: function (response) {
+            console.log(response);
+        },
+      });
+}
 
 liArray.forEach(x => {
 
@@ -22,13 +58,24 @@ liArray.forEach(x => {
 
     java1Ul.innerHTML += `                
     <li>
-    <a href="${x.link}" target="_blank" rel="noopener noreferrer">
+    <a href="${x.link}" target="_blank" rel="noopener noreferrer" onclick="incrementCounter(${x.apiKey});">
         <ion-icon name="${icon}"></ion-icon>
         ${x.text}
         ${swords}
     </a>
+    <span style="position: absolute;" class="countSpan" id="spancounternum${x.apiKey}" hidden>
+        ${x.apiKey}
+    </span>
     </li>`;
 });
+
+function showHiddenCounters() {
+    let els = document.getElementsByClassName("countSpan");
+    for (let el of els) {
+        el.hidden = false;
+        getValue(el.innerText, el.id);
+    }
+}
 
 const videoEndTime = 10;
 const startMusicAfterMS = 5500 + ((10 - videoEndTime) * 1000);
@@ -75,13 +122,18 @@ window.onclick = function() {
 
     clickCount++;
     
-    // skip video if clicks more than 7
+    // skip video if clicks more than
     if (clickCount > 4 && vid.currentTime < videoEndTime) {
         vid.currentTime = videoEndTime;
     }
-    // stop audio if clicks more than 20
+    // stop audio if clicks more than
     if (clickCount > 10) {
         document.getElementById("audio_player").pause();
+    }
+
+    // show hidden counters if clicks
+    if (clickCount == 30) {
+        showHiddenCounters();
     }
 }
 
