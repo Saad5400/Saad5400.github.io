@@ -76,11 +76,11 @@ window.onclick = function() {
     clickCount++;
     
     // skip video if clicks more than 7
-    if (clickCount > 7 && vid.currentTime < videoEndTime) {
+    if (clickCount > 4 && vid.currentTime < videoEndTime) {
         vid.currentTime = videoEndTime;
     }
     // stop audio if clicks more than 20
-    if (clickCount > 20) {
+    if (clickCount > 10) {
         document.getElementById("audio_player").pause();
     }
 }
