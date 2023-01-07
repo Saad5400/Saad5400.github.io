@@ -14,7 +14,17 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
 	<link rel="icon" type="image/png" href="../favicon.png">
-    <link rel="stylesheet" href="../css/uquIndex.css">
+    <script>
+        let normal = '<link rel="stylesheet" href="../css/uquIndex.css">';
+        let another = '<link rel="stylesheet" href="../css/uquIndex2.css">';
+        // Math.random() > 0.5
+        if (false) {
+            document.getElementsByTagName("head")[0].innerHTML += normal;
+        }
+        else {
+            document.getElementsByTagName("head")[0].innerHTML += another;
+        }
+    </script>
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
